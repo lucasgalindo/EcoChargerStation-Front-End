@@ -1,0 +1,40 @@
+.containerSobre {
+    padding: 64px;
+    width: 50%;
+    border-radius: 32px;
+    border: none;
+    box-shadow: 0 0 4px rgba(90, 90, 90, 0.47);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.textosSobreNós{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+.gradientBlue{
+    background: linear-gradient(to right, #0A0078, #000AFF);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+
+.textosSobreNós h1 {
+    align-self: center;
+    font-weight: 600;
+    font-size: 32px;
+    color: #0b0b0b;
+}
+
+.textos {
+    font-weight: 400;
+    font-size: 16px;
+    color: #110f0f;
+}
+
+.bold {
+    font-weight: 500;
+}
