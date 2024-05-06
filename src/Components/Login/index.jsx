@@ -4,20 +4,24 @@ import "./Login.css";
 import LoginController from "../../reducer/login";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Login (){
-
+    const navigation = useNavigate();
     const [credentials, setCredentials] = useState({email: "", password: ""})
-    const [state, dispatch] = useReducer(LoginController)
-
+    const [state, dispatch] = useReducer(LoginController);
+    const [loading, setLoading] = useState(false);
     function VerificarCredenciais(){
         dispatch({type: "login", payload:{
             email: credentials.email,
             password: credentials.password}});    
+        setLoading(true)
     }
     useEffect(()=>{
-        console.log(state)
-    }, [state])
+        if(state){
+            navigation("/Sobre")
+        }
+    }, [loading])
 
     return (
         <>
@@ -40,7 +44,6 @@ export default function Login (){
             <button className="botaoEntrarCom"><img src="" alt="Google" /></button>
             <button className="botaoEntrarCom"><img src="" alt="Facebook" /></button>
             </div>
-
             <h4>Ainda não possue uma conta? <span style={{color: "#0047FF"}}>Registrar</span> </h4>
 
         </section>
