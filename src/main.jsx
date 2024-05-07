@@ -9,7 +9,7 @@ import "./App.css"
 const routes = createBrowserRouter([
   {
     element: <App></App>,
-    path: "/login",
+    path: "/",
   },
   {
     element: <Sobre />,
