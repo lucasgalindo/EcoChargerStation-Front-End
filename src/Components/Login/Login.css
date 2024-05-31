@@ -1,4 +1,4 @@
-.containerLogin {
+.containerGeral {
     padding: 32px;
     width: 40%;
     border-radius: 32px;
@@ -10,7 +10,7 @@
     flex-direction: column;
 }
 
-.formularioLogin{
+.formulario{
     gap: 20px;
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@
     flex-direction: column;
 }
 
-.formularioLogin input {
+.formulario input {
     border-radius: 16px;
     height: 55px;
     width: 350px;
@@ -27,12 +27,12 @@
     font-size: 16px;
 }
 
-.formularioLogin h1{
+.formulario h1{
 font-weight: 400;
 text-align: center;
 }
 
-.formularioLogin h3{
+.formulario h3{
 margin-top: -10px; 
 font-size: 10px;
 font-weight: 400;
@@ -46,7 +46,7 @@ color: #0047FF;
         -webkit-text-fill-color: transparent;
 }
 
-.botaoEntrar{
+.botaoGenerico{
     margin-top: 64px;
     background-color: #0154FA;
     border: none;
@@ -80,7 +80,7 @@ color: #0047FF;
 
 }
 
-.containerLogin h4{
+.containerGeral h4{
     margin-top: 32px;
     font-size: 16px;
     font-weight: 300;

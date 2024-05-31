@@ -1,9 +1,10 @@
 import './App.css'
-import Login from './Components/Login'
-import { BrowserRouter } from 'react-router-dom'
+import PagamentoCredito from './Pages/PagamentoCredito'
 function App() {
 
-  return (<Login />)
+  return (
+  <PagamentoCredito />
+  )
 }
 
 export default App

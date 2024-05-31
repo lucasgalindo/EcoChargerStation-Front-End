@@ -25,9 +25,9 @@ export default function Login (){
 
     return (
         <>
-        <section className="containerLogin">
+        <section className="containerGeral">
             <Logo />
-            <div className="formularioLogin">
+            <div className="formulario">
                 <h1>Bem-vindo ao <br/>
                 <span className="tituloGradient">EcoChargerStation</span></h1>
 
@@ -36,7 +36,7 @@ export default function Login (){
                 <h3>ESQUECI MINHA SENHA!</h3>
             </div>
 
-            <button className="botaoEntrar" onClick={VerificarCredenciais}> Entrar </button>
+            <button className="botaoGenerico" onClick={VerificarCredenciais}> Entrar </button>
             <span className="entrarCom"> Entrar com </span>
 
             <div className="botoes">
