@@ -6,7 +6,10 @@ import InputMask from 'react-input-mask';
 import { FaCreditCard } from 'react-icons/fa';
 
 export default function PagamentoCredito() {
+  const [cardNumber, setCardNumber] = useState('');
   const [expiryDate, setExpiryDate] = useState('');
+  const [cvv, setCvv] = useState('');
+  const [cpf, setCpf] = useState('');
   const [error, setError] = useState('');
   const [isChecked, setIsChecked] = useState(false);
 
@@ -34,46 +37,79 @@ export default function PagamentoCredito() {
     setIsChecked(!isChecked);
   };
 
+  const handlePaymentSubmit = () => {
+    
+    if (!cardNumber) {
+      setError('Por favor, preencha o número do cartão.');
+      return;
+    } else if (!expiryDate) {
+      setError('Por favor, preencha a data de vencimento.');
+      return;
+    } else if (!cvv) {
+      setError('Por favor, preencha o CVV.');
+      return;
+    } else if (!cpf) {
+      setError('Por favor, preencha o CPF.');
+      return;
+    } else if (!isChecked) {
+      setError('Por favor, aceite os termos para continuar.');
+      return;
+    }
+    // ESPAÇO PARA COLOCARMOS A LOGICA QUE SERÁ UTILIZADA.
+  };
+
   return (
     <section className='containerGeral'>
       <p>PAGAMENTO CRÉDITO</p>
       <Logo />
       <h2>Estamos quase lá! Preencha os campos abaixo para realizar o pagamento e finalizar sua compra com segurança.</h2>
       <InputMask 
-      placeholder='DIGITE O NOME DO TITULAR' 
-      className="input-field"
+        placeholder='DIGITE O NOME DO TITULAR' 
+        className="input-field"
       />
+
       <div className="input-container">
         <InputMask
           mask="9999 9999 9999 9999"
           placeholder="Digite o número do seu cartão"
           className="input-field"
+          value={cardNumber}
+          onChange={(e) => setCardNumber(e.target.value)}
         />
         <FaCreditCard className="credit-card-icon" />
       </div>
+      {error && error.includes('número do cartão') && <div className="error-message">{error}</div>}
 
       <div className="input-container">
         <InputMask
           mask="99/9999"
           placeholder="Data de Vencimento"
-          className={`input-field ${error ? 'input-error' : ''}`}
+          className={`input-field ${error && error.includes('data de vencimento') ? 'input-error' : ''}`}
           value={expiryDate}
           onChange={handleExpiryDateChange}
         />
-        {error && <div className="error-message">{error}</div>}
       </div>
-      <InputMask 
-      mask="999"
-      placeholder='CVV'
-      className='input-field'
-      />
-      <InputMask 
-      mask="999.999.999-99"
-      placeholder='DIGITE O CPF DO TITULAR'
-      className='input-field'
-      />
+      {error && error.includes('data de vencimento') && <div className="error-message">{error}</div>}
 
-        <div className="input-container checkbox-container">
+      <InputMask 
+        mask="999"
+        placeholder='CVV'
+        className='input-field'
+        value={cvv}
+        onChange={(e) => setCvv(e.target.value)}
+      />
+      {error && error.includes('CVV') && <div className="error-message">{error}</div>}
+
+      <InputMask 
+        mask="999.999.999-99"
+        placeholder='DIGITE O CPF DO TITULAR'
+        className='input-field'
+        value={cpf}
+        onChange={(e) => setCpf(e.target.value)}
+      />
+      {error && error.includes('CPF') && <div className="error-message">{error}</div>}
+
+      <div className="input-container checkbox-container">
         <input
           type="checkbox"
           id="saveCard"
@@ -83,7 +119,9 @@ export default function PagamentoCredito() {
         />
         <label htmlFor="saveCard" className="checkbox-label">Manter informações neste dispositivo para futuras utilizações.</label>
       </div>
+      {error && error.includes('termos') && <div className="error-message">{error}</div>}
 
+      <button className="botaoGenerico" onClick={handlePaymentSubmit}> EFETUAR PAGAMENTO </button>
     </section>
   );
 }
