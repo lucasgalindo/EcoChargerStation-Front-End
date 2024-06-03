@@ -1,9 +1,5 @@
 .containerGeral {
     padding: 32px;
-    width: 40%;
-    border-radius: 32px;
-    border: none;
-    box-shadow: 0 0 4px rgba(90, 90, 90, 0.47);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +43,7 @@ color: #0047FF;
 }
 
 .botaoGenerico{
-    margin-top: 64px;
+    margin-top: 38px;
     background-color: #0154FA;
     border: none;
     height: 55px;
@@ -71,7 +67,7 @@ color: #0047FF;
 }
 
 .botaoEntrarCom{
-    margin-top: 32px;
+    margin-top: 16px;
     width: 100px;
     height: 59px;
     border-radius: 16px;

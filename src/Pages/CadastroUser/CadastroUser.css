@@ -1,0 +1,33 @@
+.tituloPrincipalCadastro {
+    align-self: flex-start;
+}
+
+select {
+    border-radius: 16px;
+    height: 55px;
+    width: 370px;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    padding-left: 16px;
+    font-size: 16px;
+}
+
+p {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.botaoGenerico {
+    margin-top: 0;
+}
+
+.error-message {
+    font-size: 14px;
+    width: 250px;
+    margin: 0 auto; 
+    padding: 12px;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+  }

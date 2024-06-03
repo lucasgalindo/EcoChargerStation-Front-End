@@ -1,9 +1,10 @@
 import './App.css'
-import PagamentoCredito from './Pages/PagamentoCredito'
+import PagamentoRecarga from './Pages/PagamentoRecarga'
+
 function App() {
 
   return (
-  <PagamentoCredito />
+  <PagamentoRecarga />
   )
 }
 
